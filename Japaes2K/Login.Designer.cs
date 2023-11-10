@@ -40,13 +40,13 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Font = new System.Drawing.Font("Times New Roman", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(98, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(80, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(195, 28);
+            this.lblTitulo.Size = new System.Drawing.Size(221, 36);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Login :: Japães2K";
+            this.lblTitulo.Text = "Login :: Japães";
             // 
             // lblEmail
             // 
@@ -81,7 +81,7 @@
             // 
             this.txbSenha.Location = new System.Drawing.Point(98, 112);
             this.txbSenha.Name = "txbSenha";
-            this.txbSenha.PasswordChar = '*';
+            this.txbSenha.PasswordChar = '•';
             this.txbSenha.Size = new System.Drawing.Size(178, 20);
             this.txbSenha.TabIndex = 4;
             // 
@@ -95,6 +95,7 @@
             this.btnEntrar.TabIndex = 5;
             this.btnEntrar.Text = "ENTRAR";
             this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // Login
             // 

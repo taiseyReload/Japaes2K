@@ -73,6 +73,36 @@ namespace Japaes2K.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bread {
+            get {
+                object obj = ResourceManager.GetObject("bread", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_bread_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bread-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_bread_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bread-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loja_de_padaria_generativa_ai_vitrines_com_paes_e_bolos_baker_estilo_cartoon_vector_illu_934909_1498 {
             get {
                 object obj = ResourceManager.GetObject("loja-de-padaria-generativa-ai-vitrines-com-paes-e-bolos-baker-estilo-cartoon-vect" +
