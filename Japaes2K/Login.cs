@@ -30,6 +30,17 @@ namespace Japaes2K
             if (resultado.Rows.Count == 1)
             {
                 // Senha correta: Prosseguir..
+                usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
+                usuario.Id = (int)resultado.Rows[0]["id"];
+                MessageBox.Show(usuario.NomeCompleto);
+                // Próximo passo: abrir a janela menu:
+                MenuPrincipal janela = new MenuPrincipal();
+                // Esconder a janela atual:
+                Hide();
+                // Mostrar o menu:
+                janela.ShowDialog();
+                // Mostrar o Login quando o menu fechar:
+                Show();
             }
             else
             {
