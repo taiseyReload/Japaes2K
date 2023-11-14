@@ -97,6 +97,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\GerenciamentoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GerenciamentoUsuarios.Designer.cs">
+      <DependentUpon>GerenciamentoUsuarios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +122,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\GerenciamentoUsuarios.resx">
+      <DependentUpon>GerenciamentoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -150,6 +159,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-bread-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_processing20220209-20456-1o5iwko.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4596136.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

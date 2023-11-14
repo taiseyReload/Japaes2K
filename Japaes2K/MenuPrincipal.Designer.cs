@@ -34,7 +34,9 @@
             this.btnProdutos = new System.Windows.Forms.Button();
             this.btnCaixa = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.pibSair = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pibSair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,8 +107,20 @@
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(354, 60);
             this.btnUsuarios.TabIndex = 5;
-            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.Text = "Gerenciamento de Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // pibSair
+            // 
+            this.pibSair.Image = global::Japaes2K.Properties.Resources.image_processing20220209_20456_1o5iwko;
+            this.pibSair.Location = new System.Drawing.Point(333, 9);
+            this.pibSair.Name = "pibSair";
+            this.pibSair.Size = new System.Drawing.Size(39, 38);
+            this.pibSair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pibSair.TabIndex = 7;
+            this.pibSair.TabStop = false;
+            this.pibSair.Click += new System.EventHandler(this.pibSair_Click);
             // 
             // pictureBox1
             // 
@@ -124,6 +138,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(392, 338);
+            this.Controls.Add(this.pibSair);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnCaixa);
@@ -131,8 +146,12 @@
             this.Controls.Add(this.btnComandas);
             this.Controls.Add(this.lblBoasVindas);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pibSair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,5 +167,6 @@
         private System.Windows.Forms.Button btnCaixa;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pibSair;
     }
 }

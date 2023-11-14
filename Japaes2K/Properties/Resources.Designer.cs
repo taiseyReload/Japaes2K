@@ -63,6 +63,16 @@ namespace Japaes2K.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4596136 {
+            get {
+                object obj = ResourceManager.GetObject("4596136", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _539c483ff16585f1014ce8bff226bc56 {
             get {
                 object obj = ResourceManager.GetObject("539c483ff16585f1014ce8bff226bc56", resourceCulture);
@@ -103,6 +113,16 @@ namespace Japaes2K.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_processing20220209_20456_1o5iwko {
+            get {
+                object obj = ResourceManager.GetObject("image_processing20220209-20456-1o5iwko", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loja_de_padaria_generativa_ai_vitrines_com_paes_e_bolos_baker_estilo_cartoon_vector_illu_934909_1498 {
             get {
                 object obj = ResourceManager.GetObject("loja-de-padaria-generativa-ai-vitrines-com-paes-e-bolos-baker-estilo-cartoon-vect" +
@@ -127,6 +147,16 @@ namespace Japaes2K.Properties {
         internal static System.Drawing.Bitmap Peaceful_Field_Landscape_AI_Generated_4K_Wallpaper {
             get {
                 object obj = ResourceManager.GetObject("Peaceful-Field-Landscape-AI-Generated-4K-Wallpaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap people_icon {
+            get {
+                object obj = ResourceManager.GetObject("people-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
