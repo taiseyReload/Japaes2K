@@ -23,7 +23,7 @@ namespace Japaes2K
             this.usuario = usuario;
 
             // Mudar a label de apresentação:
-            lblBoasVindas.Text = "Olá " + usuario.NomeCompleto + "!";
+            lblBoasVindas.Text = "Olá " + usuario.NomeCompleto + "! Por favor, selecione uma opção:";
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)

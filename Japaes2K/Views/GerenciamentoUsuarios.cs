@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Japaes2K.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +19,7 @@ namespace Japaes2K.Views
         {
             InitializeComponent();
             Classes.Usuario usuario = new Classes.Usuario();
-
-            // Atribuir a tabela (resultado do SELECT) no DGV:
-            dgvUsuarios.DataSource = usuario.ListarTudo();
+            AtualizarTudo();      
         }
 
         private void txbNomeCompleto_TextChanged(object sender, EventArgs e)
@@ -45,12 +44,7 @@ namespace Japaes2K.Views
             if(usuario.Cadastrar() == true)
             {
                 MessageBox.Show("Usuário cadastrado com sucesso!");
-                // Limpar os campos:
-                txbNomeCompleto.Clear();
-                txbEmail.Clear();
-                txbSenha.Clear();
-                // Atualizar o dgv:
-                dgvUsuarios.DataSource = usuario.ListarTudo();
+                AtualizarTudo();
             }
             else
             {
@@ -58,12 +52,31 @@ namespace Japaes2K.Views
             }
 
         }
-
+        public void AtualizarTudo()
+        {
+            Classes.Usuario usuario = new Classes.Usuario();
+            // Atualizar o DGV:
+            dgvUsuarios.DataSource = usuario.ListarTudo();
+            // Listar os campos de edição:
+            txbEdEmail.Clear();
+            txbEdNomeCompleto.Clear();
+            txbEdSenha.Clear();
+            lblApagar.Text = "Selecione um usuário para apagar.";
+            // Desabilitar os grbs:
+            grbApagar.Enabled = false;
+            grbEditar.Enabled = false;
+            // Limpar os campos:
+            txbNomeCompleto.Clear();
+            txbEmail.Clear();
+            txbSenha.Clear();
+        }
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Ativar os grbs:
+            // Ativar os grbs:                     
             grbEditar.Enabled = true;
+            grbEditar.BackColor = Color.Black;
             grbApagar.Enabled = true;
+            grbApagar.BackColor = Color.Black;
 
             // Obter a linha clicada:
             int linhaSelecionada = dgvUsuarios.CurrentCell.RowIndex;
@@ -79,7 +92,7 @@ namespace Japaes2K.Views
             lblApagar.Text = linha.Cells[0].Value.ToString() + " - " +
                 linha.Cells[1].Value.ToString();
 
-            // Savar o ID do selecionado na variável global:
+            // Salvar o ID do selecionado na variável global:
             idSelecionado = (int)linha.Cells[0].Value;
         }
 
@@ -87,8 +100,48 @@ namespace Japaes2K.Views
         {
             Classes.Usuario usuario = new Classes.Usuario();
             usuario.Id = idSelecionado;
+            // Confirmar a exclusão:
+            var r = MessageBox.Show("Tem certeza que deseja remover?", "ATENÇÃO!",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes) 
+            {
+                // Apagar:
+                if(usuario.Apagar())
+                {
+                    MessageBox.Show("Usuário removido!", "Sucesso!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizarTudo();
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao remover o usuário.", "Falha!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
-            // Apagar: 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Classes.Usuario usuario = new Classes.Usuario();
+
+            // Obter os valores dos txbs:
+            usuario.Id = idSelecionado;
+            usuario.NomeCompleto = txbEdNomeCompleto.Text;
+            usuario.Email = txbEdEmail.Text;
+            usuario.Senha = txbEdSenha.Text;
+
+            // Editar:
+            if(usuario.Editar() == true)
+            {
+                MessageBox.Show("Usuário editado!", "Sucesso!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                AtualizarTudo();
+            }
+            else
+            {
+                MessageBox.Show("Falha ao editar o usuário.", "Falha!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }
