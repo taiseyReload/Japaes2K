@@ -71,10 +71,11 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(468, 230);
             this.dgvUsuarios.TabIndex = 0;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+            this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellContentClick);
             // 
             // grbEditar
             // 
-            this.grbEditar.BackColor = System.Drawing.Color.Gray;
+            this.grbEditar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.grbEditar.Controls.Add(this.txbEdSenha);
             this.grbEditar.Controls.Add(this.txbEdEmail);
             this.grbEditar.Controls.Add(this.txbEdNomeCompleto);
@@ -233,7 +234,7 @@
             // 
             // grbApagar
             // 
-            this.grbApagar.BackColor = System.Drawing.Color.Gray;
+            this.grbApagar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.grbApagar.Controls.Add(this.btnApagar);
             this.grbApagar.Controls.Add(this.lblApagar);
             this.grbApagar.Enabled = false;
@@ -271,11 +272,13 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Tai Le", 26.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(23, 9);
+            this.lblTitulo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Tai Le", 26.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lblTitulo.Location = new System.Drawing.Point(12, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(447, 45);
+            this.lblTitulo.Size = new System.Drawing.Size(472, 45);
             this.lblTitulo.TabIndex = 5;
             this.lblTitulo.Text = "Gerenciamento de Usuários";
             // 
@@ -293,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(495, 524);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pibUsuarios);

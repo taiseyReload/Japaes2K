@@ -19,7 +19,6 @@ namespace Japaes2K.Classes
 
         // Métodos:
 
-        // Logar:
         public DataTable Logar()
         {
             string comando = "SELECT id, nome_completo, email, senha" +
@@ -45,7 +44,6 @@ namespace Japaes2K.Classes
         public DataTable ListarTudo()
         {
             string comando = "SELECT id, nome_completo, email FROM usuarios";
-
             Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);

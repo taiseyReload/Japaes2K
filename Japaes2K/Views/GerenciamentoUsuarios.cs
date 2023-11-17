@@ -53,7 +53,7 @@ namespace Japaes2K.Views
 
         }
         public void AtualizarTudo()
-        {
+        { 
             Classes.Usuario usuario = new Classes.Usuario();
             // Atualizar o DGV:
             dgvUsuarios.DataSource = usuario.ListarTudo();
@@ -74,9 +74,7 @@ namespace Japaes2K.Views
         {
             // Ativar os grbs:                     
             grbEditar.Enabled = true;
-            grbEditar.BackColor = Color.Black;
             grbApagar.Enabled = true;
-            grbApagar.BackColor = Color.Black;
 
             // Obter a linha clicada:
             int linhaSelecionada = dgvUsuarios.CurrentCell.RowIndex;
@@ -142,6 +140,11 @@ namespace Japaes2K.Views
                 MessageBox.Show("Falha ao editar o usuário.", "Falha!", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

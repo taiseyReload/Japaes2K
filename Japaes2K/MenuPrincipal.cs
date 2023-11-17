@@ -42,5 +42,12 @@ namespace Japaes2K
             Views.GerenciamentoUsuarios janela = new Views.GerenciamentoUsuarios();
             janela.Show();
         }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            // Instanciar a janela:
+            Views.GerenciamentoProdutos janela = new Views.GerenciamentoProdutos(usuario);
+            janela.Show();
+        }
     }
 }
