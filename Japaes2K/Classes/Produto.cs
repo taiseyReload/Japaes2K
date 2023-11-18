@@ -22,7 +22,7 @@ namespace Japaes2K.Classes
 
         public DataTable ListarTudo()
         {
-            string comando = "SELECT id, nome, preco, id_categoria, id_respcadastro FROM produtos";
+            string comando = "SELECT * FROM view_produtos";
             Banco.ConexaoBanco conexaoBD = new Banco.ConexaoBanco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);

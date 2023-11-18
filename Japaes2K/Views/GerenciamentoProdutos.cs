@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Japaes2K.Classes;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,8 +22,17 @@ namespace Japaes2K.Views
             InitializeComponent();
             this.usuario = usuario;
             Classes.Produto produto = new Classes.Produto();
-            cmbCategoria.DataSource = produto.ListarTudo();
-            cmbEdCategoria.DataSource = produto.ListarTudo();
+            Classes.Categoria categoria = new Classes.Categoria();
+
+            // Montar um array de itens para colocar no cmb:
+            var r = categoria.ListarTudo(); // r é a tabela do Banco de Dados.
+
+            // Percorrer o r, montar a string e adicionar no array listacmb:
+            foreach(DataRow linha in r.Rows)
+            {
+                cmbCategoria.Items.Add(linha.ItemArray[0].ToString() + " - " + linha.ItemArray[1].ToString());
+                cmbEdCategoria.Items.Add(linha.ItemArray[0].ToString() + " - " + linha.ItemArray[1].ToString());
+            }
             AtualizarTudo();
         }
 
@@ -76,11 +87,13 @@ namespace Japaes2K.Views
             Classes.Produto produto = new Classes.Produto();
             // Obter os valores dos campos:
             produto.Nome = txbNome.Text;
-            produto.Preco = int.Parse(txbPreco.Text);
-            produto.IdCategoria = cmbCategoria.SelectedIndex;
+            produto.Preco = double.Parse(txbPreco.Text);
+            // Separar o texto do cmb para que seja possível obter o ID da categoria:
+            var n = cmbCategoria.Text;
+            produto.IdCategoria = int.Parse(n.Split('-')[0]);
             produto.IdRespCadastro = usuario.Id;
 
-            if (usuario.Cadastrar() == true)
+            if (produto.Cadastrar() == true)
             {
                 MessageBox.Show("Produto cadastrado!", "Sucesso!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -97,14 +110,16 @@ namespace Japaes2K.Views
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Classes.Produto produto = new Classes.Produto();
-
             // Obter os valores dos txbs:
             produto.Id = idSelecionado;
             produto.Nome = txbEdNome.Text;
-            produto.Preco = int.Parse(txbEdPreco.Text);
-            produto.IdCategoria = cmbEdCategoria.SelectedIndex;
+            produto.Preco = double.Parse(txbEdPreco.Text);
+            // Separar o texto do cmb para que seja possível obter o ID da categoria:
+            var n = cmbEdCategoria.Text;
+            produto.IdCategoria = int.Parse(n.Split('-')[0]);
+            produto.IdRespCadastro = usuario.Id;
 
-            if(usuario.Editar())
+            if (produto.Editar())
             {
                 MessageBox.Show("Produto editado!", "Sucesso!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -142,6 +157,11 @@ namespace Japaes2K.Views
         }
 
         private void txbPreco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

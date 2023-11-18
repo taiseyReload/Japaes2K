@@ -32,24 +32,24 @@
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbCadastrar = new System.Windows.Forms.GroupBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.txbPreco = new System.Windows.Forms.TextBox();
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblPreco = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.grbEditar = new System.Windows.Forms.GroupBox();
+            this.cmbEdCategoria = new System.Windows.Forms.ComboBox();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.txbEdPreco = new System.Windows.Forms.TextBox();
             this.txbEdNome = new System.Windows.Forms.TextBox();
             this.lblEdCategoria = new System.Windows.Forms.Label();
             this.lblEdPreco = new System.Windows.Forms.Label();
             this.lblEdNome = new System.Windows.Forms.Label();
             this.grbApagar = new System.Windows.Forms.GroupBox();
-            this.txbEdPreco = new System.Windows.Forms.TextBox();
-            this.lblApagar = new System.Windows.Forms.Label();
             this.btnApagar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.cmbEdCategoria = new System.Windows.Forms.ComboBox();
+            this.lblApagar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grbCadastrar.SuspendLayout();
@@ -71,6 +71,10 @@
             // 
             // dgvProdutos
             // 
+            this.dgvProdutos.AllowUserToAddRows = false;
+            this.dgvProdutos.AllowUserToDeleteRows = false;
+            this.dgvProdutos.AllowUserToResizeColumns = false;
+            this.dgvProdutos.AllowUserToResizeRows = false;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Location = new System.Drawing.Point(12, 84);
             this.dgvProdutos.Name = "dgvProdutos";
@@ -105,6 +109,28 @@
             this.grbCadastrar.TabIndex = 3;
             this.grbCadastrar.TabStop = false;
             this.grbCadastrar.Text = "Cadastrar:";
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Location = new System.Drawing.Point(108, 76);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(100, 21);
+            this.cmbCategoria.TabIndex = 7;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(6, 103);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(243, 33);
+            this.btnCadastrar.TabIndex = 6;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // txbPreco
             // 
@@ -171,6 +197,34 @@
             this.grbEditar.TabStop = false;
             this.grbEditar.Text = "Editar:";
             // 
+            // cmbEdCategoria
+            // 
+            this.cmbEdCategoria.FormattingEnabled = true;
+            this.cmbEdCategoria.Location = new System.Drawing.Point(106, 76);
+            this.cmbEdCategoria.Name = "cmbEdCategoria";
+            this.cmbEdCategoria.Size = new System.Drawing.Size(100, 21);
+            this.cmbEdCategoria.TabIndex = 8;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(6, 103);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(243, 33);
+            this.btnEditar.TabIndex = 7;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // txbEdPreco
+            // 
+            this.txbEdPreco.Location = new System.Drawing.Point(106, 50);
+            this.txbEdPreco.Name = "txbEdPreco";
+            this.txbEdPreco.Size = new System.Drawing.Size(100, 20);
+            this.txbEdPreco.TabIndex = 5;
+            // 
             // txbEdNome
             // 
             this.txbEdNome.Location = new System.Drawing.Point(106, 24);
@@ -223,23 +277,6 @@
             this.grbApagar.TabStop = false;
             this.grbApagar.Text = "Apagar:";
             // 
-            // txbEdPreco
-            // 
-            this.txbEdPreco.Location = new System.Drawing.Point(106, 50);
-            this.txbEdPreco.Name = "txbEdPreco";
-            this.txbEdPreco.Size = new System.Drawing.Size(100, 20);
-            this.txbEdPreco.TabIndex = 5;
-            // 
-            // lblApagar
-            // 
-            this.lblApagar.AutoSize = true;
-            this.lblApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApagar.Location = new System.Drawing.Point(17, 29);
-            this.lblApagar.Name = "lblApagar";
-            this.lblApagar.Size = new System.Drawing.Size(291, 20);
-            this.lblApagar.TabIndex = 0;
-            this.lblApagar.Text = "Selecione o produto que deseja apagar.";
-            // 
             // btnApagar
             // 
             this.btnApagar.BackColor = System.Drawing.Color.Red;
@@ -253,47 +290,15 @@
             this.btnApagar.UseVisualStyleBackColor = false;
             this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
-            // btnCadastrar
+            // lblApagar
             // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(6, 103);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(243, 33);
-            this.btnCadastrar.TabIndex = 6;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(6, 103);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(243, 33);
-            this.btnEditar.TabIndex = 7;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(108, 76);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(100, 21);
-            this.cmbCategoria.TabIndex = 7;
-            // 
-            // cmbEdCategoria
-            // 
-            this.cmbEdCategoria.FormattingEnabled = true;
-            this.cmbEdCategoria.Location = new System.Drawing.Point(106, 76);
-            this.cmbEdCategoria.Name = "cmbEdCategoria";
-            this.cmbEdCategoria.Size = new System.Drawing.Size(100, 21);
-            this.cmbEdCategoria.TabIndex = 8;
+            this.lblApagar.AutoSize = true;
+            this.lblApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApagar.Location = new System.Drawing.Point(17, 29);
+            this.lblApagar.Name = "lblApagar";
+            this.lblApagar.Size = new System.Drawing.Size(291, 20);
+            this.lblApagar.TabIndex = 0;
+            this.lblApagar.Text = "Selecione o produto que deseja apagar.";
             // 
             // GerenciamentoProdutos
             // 
