@@ -49,5 +49,11 @@ namespace Japaes2K
             Views.GerenciamentoProdutos janela = new Views.GerenciamentoProdutos(usuario);
             janela.Show();
         }
+
+        private void btnComandas_Click(object sender, EventArgs e)
+        {
+            Views.GerenciamentoComandas janela = new Views.GerenciamentoComandas(usuario);
+            janela.Show();
+        }
     }
 }
