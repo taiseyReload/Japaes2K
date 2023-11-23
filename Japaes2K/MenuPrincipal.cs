@@ -24,6 +24,13 @@ namespace Japaes2K
 
             // Mudar a label de apresentação:
             lblBoasVindas.Text = "Olá " + usuario.NomeCompleto + "! Por favor, selecione uma opção:";
+
+            // Esconder o "Gerenciamento Usuários" dos IDs diferentes de 1:
+            if(usuario.Id != 1)
+            {
+                btnUsuarios.Visible = false;
+            }
+
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)

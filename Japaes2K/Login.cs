@@ -32,12 +32,20 @@ namespace Japaes2K
                 // Senha correta: Prosseguir..
                 usuario.NomeCompleto = resultado.Rows[0]["nome_completo"].ToString();
                 usuario.Id = (int)resultado.Rows[0]["id"];
+
                 // Próximo passo: abrir a janela menu:
                 MenuPrincipal janela = new MenuPrincipal(usuario);
+
+                // Limpar os campos de login:
+                txbEmail.Clear();
+                txbSenha.Clear();
+
                 // Esconder a janela atual:
                 Hide();
+
                 // Mostrar o menu:
                 janela.ShowDialog();
+
                 // Mostrar o Login quando o menu fechar:
                 Show();
             }
@@ -47,6 +55,11 @@ namespace Japaes2K
                 MessageBox.Show("Email ou Senha incorretos!", "Erro", 
                     MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

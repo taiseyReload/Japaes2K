@@ -33,10 +33,21 @@ namespace Japaes2K.Views
                 Classes.OrdemComanda ordem = new Classes.OrdemComanda();
                 ordem.IdFicha = int.Parse(txbComanda.Text);
                 var r = ordem.BuscarFicha();
-                dgvCaixa.DataSource = r;
-                // Atualizar o valor total:
-                lblTotal.Text = r.Compute("SUM(Total_Item)", "True").ToString();
-
+                // Verificar se existem itens na comanda:
+                if (r.Rows.Count > 0)
+                {
+                    dgvCaixa.DataSource = r;
+                    // Atualizar o valor total:
+                    lblTotal.Text = r.Compute("SUM(Total_Item)", "True").ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Não existem lançamentos nessa comanda.", "Erro!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dgvCaixa.DataSource = null;
+                    lblTotal.Text = "0,00";
+                    txbComanda.Clear();
+                }
             }
             else
             {

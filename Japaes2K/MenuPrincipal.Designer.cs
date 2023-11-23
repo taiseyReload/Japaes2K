@@ -130,7 +130,7 @@
             this.pictureBox1.Image = global::Japaes2K.Properties.Resources.icons8_bread_60;
             this.pictureBox1.Location = new System.Drawing.Point(7, 9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(62, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(45, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;

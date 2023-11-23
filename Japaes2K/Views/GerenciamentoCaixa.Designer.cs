@@ -134,7 +134,7 @@
             // pibIcon
             // 
             this.pibIcon.Image = global::Japaes2K.Properties.Resources._3321014;
-            this.pibIcon.Location = new System.Drawing.Point(12, 332);
+            this.pibIcon.Location = new System.Drawing.Point(120, 332);
             this.pibIcon.Name = "pibIcon";
             this.pibIcon.Size = new System.Drawing.Size(136, 140);
             this.pibIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
