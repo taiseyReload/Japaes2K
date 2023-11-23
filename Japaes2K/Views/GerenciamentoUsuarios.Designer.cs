@@ -64,6 +64,7 @@
             this.dgvUsuarios.AllowUserToResizeColumns = false;
             this.dgvUsuarios.AllowUserToResizeRows = false;
             this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(12, 60);
             this.dgvUsuarios.Name = "dgvUsuarios";

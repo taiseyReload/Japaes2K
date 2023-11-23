@@ -97,6 +97,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\GerenciamentoCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GerenciamentoCaixa.Designer.cs">
+      <DependentUpon>GerenciamentoCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\GerenciamentoComandas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\GerenciamentoCaixa.resx">
+      <DependentUpon>GerenciamentoCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\GerenciamentoComandas.resx">
       <DependentUpon>GerenciamentoComandas.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\3930510.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3321014.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

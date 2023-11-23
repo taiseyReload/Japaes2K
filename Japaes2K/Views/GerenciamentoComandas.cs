@@ -29,8 +29,17 @@ namespace Japaes2K.Views
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            grbLancamento.Enabled = true;
-            grbInformações.Enabled = false;
+            // Verificar se o número da comanda e o código do produto não estão vazios:
+            if (txbComanda.Text != "" && txbProduto.Text != "")
+            {
+                grbLancamento.Enabled = true;
+                grbInformações.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Verifique as informações digitadas.", "Erro!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void lblProduto_Click(object sender, EventArgs e)
@@ -50,35 +59,61 @@ namespace Japaes2K.Views
 
         private void btnLancar_Click(object sender, EventArgs e)
         {
-            var r = MessageBox.Show("Tem certeza que deseja lançar?", "Aviso!",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (r == DialogResult.Yes) 
+            if (txbQuantidade.Text != "")
             {
-                Classes.OrdemComanda ordem = new Classes.OrdemComanda();
-                // Obter os valores dos campos:
-                ordem.IdFicha = int.Parse(txbComanda.Text);
-                ordem.IdProduto = int.Parse(txbProduto.Text);
-                ordem.Quantidade = int.Parse(txbQuantidade.Text);
-                ordem.IdResp = usuario.Id;
-                // Efetuar o cadastro:
-                if(ordem.NovoLancamento() == true)
+                var r = MessageBox.Show("Tem certeza que deseja lançar?", "Aviso!",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                // Verificar se a quantidade não está vazia:
+                if (r == DialogResult.Yes)
                 {
-                    MessageBox.Show("Lançamento efetuado!", "Sucesso!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    grbLancamento.Enabled = false;
-                    grbInformações.Enabled = true;
-                    txbProduto.Clear();
-                    txbProdutoL.Clear();
-                    txbQuantidade.Clear();
+                    Classes.OrdemComanda ordem = new Classes.OrdemComanda();
+                    // Obter os valores dos campos:
+                    ordem.IdFicha = int.Parse(txbComanda.Text);
+                    ordem.IdProduto = int.Parse(txbProduto.Text);
+                    ordem.Quantidade = int.Parse(txbQuantidade.Text);
+                    ordem.IdResp = usuario.Id;
+                    // Efetuar o cadastro:
+                    if (ordem.NovoLancamento() == true)
+                    {
+                        MessageBox.Show("Lançamento efetuado!", "Sucesso!",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimparTudo();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao efetuar o lançamento!", "Falha!",
+                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        LimparTudo();
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Erro ao efetuar o lançamento!", "Falha!",
-                      MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                
             }
+            else
+            {
+                MessageBox.Show("Verifique as informações digitadas.", "Erro!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txbQuantidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparTudo();
+        }
+        private void LimparTudo()
+        {
+            // Limpar os campos:
+            txbProduto.Clear();
+            txbProdutoL.Clear();
+            txbQuantidade.Clear();
+            txbComanda.Clear();
+
+            // Resetar os grbs:
+            grbInformações.Enabled = true;
+            grbLancamento.Enabled = false;
         }
     }
 }

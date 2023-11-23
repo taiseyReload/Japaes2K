@@ -75,6 +75,7 @@
             this.dgvProdutos.AllowUserToDeleteRows = false;
             this.dgvProdutos.AllowUserToResizeColumns = false;
             this.dgvProdutos.AllowUserToResizeRows = false;
+            this.dgvProdutos.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.dgvProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProdutos.Location = new System.Drawing.Point(12, 84);
             this.dgvProdutos.Name = "dgvProdutos";
